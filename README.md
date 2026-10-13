@@ -68,15 +68,23 @@ Both long and short positions are permitted.
 
 The initial stop distance determines the risk unit:
 
-\[
-R_{\text{risk}}=|P_{\text{entry}}-P_{\text{stop}}|
-\]
+
+
+```math
+R_{\text{risk}} = |P_{\text{entry}} - P_{\text{stop}}|
+```
+
+
 
 Each trade's return is expressed in R-multiples:
 
-\[
-R_i=\frac{\text{Realized price P\&L}_i}{R_{\text{risk},i}}
-\]
+
+
+```math
+R_i = \frac{\text{Realized price P\&L}_i}{R_{\text{risk},i}}
+```
+
+
 
 This normalization allows trades with different price volatility and stop distances to be compared consistently.
 
@@ -244,18 +252,18 @@ Transaction costs were modeled as a fixed round-trip dollar cost per share.
 
 For each trade:
 
-\[
-R_{\text{net},i}
-=
-R_{\text{gross},i}
--
-\frac{C}{D_i}
-\]
+
+
+```math
+R_{\text{net},i} = R_{\text{gross},i} - \frac{C}{D_i}
+```
+
+
 
 Where:
 
-- \(C\) is the assumed round-trip cost per share.
-- \(D_i\) is the trade's initial stop distance.
+- $C$ is the assumed round-trip cost per share.
+- $D_i$ is the trade's initial stop distance.
 
 | Round-trip cost | Net Average R | Net Total R |
 |---|---:|---:|
@@ -277,9 +285,11 @@ The analysis evaluated multiple block lengths and transaction-cost scenarios.
 
 Under a 4-cent round-trip cost assumption, the estimated net average R was approximately:
 
-\[
-\bar R_{\text{net}}=0.0535
-\]
+
+```math
+\bar{R}_{\text{net}} = 0.0535
+```
+
 
 The 95% bootstrap confidence interval included zero.
 
@@ -324,11 +334,13 @@ The Monte Carlo model used historical out-of-sample trade outcomes, adjusted for
 
 The equity process is represented by:
 
-\[
-X_n=r\sum_{i=1}^{n}R_i
-\]
 
-Where \(r\) is the fixed dollar risk per trade.
+```math
+X_n = r \sum_{i=1}^{n} R_i
+```
+
+
+Where $r$ is the fixed dollar risk per trade.
 
 A simulation passes when equity first reaches the profit target and fails when it first reaches the loss limit.
 
