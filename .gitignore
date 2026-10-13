@@ -1,25 +1,38 @@
-# Virtual environment
+
+
+# Python environments
 .venv/
 venv/
+env/
 
-# Python
+# Python cache and build artifacts
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
 
-# Jupyter
-.ipynb_checkpoints/
-
-# Environment variables / API keys
+# Credentials and local configuration
 .env
+.env.*
+!.env.example
+*.key
+*.pem
 
-# Raw and processed market data
-data/raw/*
-data/processed/*
+# Market data - not distributed
+data/raw/
+data/processed/
+*.parquet
 
-# Keep directories in Git
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# Local IDE files
+.vscode/
+.idea/
 
-# OS
+# Temporary files
+*.log
 .DS_Store
 Thumbs.db
+
